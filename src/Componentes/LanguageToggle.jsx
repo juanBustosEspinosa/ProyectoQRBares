@@ -4,19 +4,19 @@ export default function LanguageToggle({ isEnglish, setIsEnglish }) {
       onClick={() => setIsEnglish((prev) => !prev)}
       className="lang-toggle-btn"
       aria-label="Cambiar idioma"
-      title={isEnglish ? "Cambiar a Español" : "Switch to English"}
+      title={isEnglish ? "Switch to English" : "Cambiar a Español"}
     >
     <img
         src={
           isEnglish
-            ? "https://flagcdn.com/w40/es.png" // Muestra España cuando está en inglés
-            : "https://flagcdn.com/w40/gb.png" // Muestra Reino Unido cuando está en español
+            ? "https://flagcdn.com/w40/gb.png" // Muestra España cuando está en inglés
+            : "https://flagcdn.com/w40/es.png"  // Muestra Reino Unido cuando está en español
         }
-        alt={isEnglish ? "Bandera de España" : "UK Flag"}
+        alt={isEnglish ?  "UK Flag" : "Bandera de España"}
         className="flag-img"
       />
       <span className="lang-label">
-        {isEnglish ? "ES" : "EN"}
+        {isEnglish ? "EN" : "ES" }
       </span>
     </button>
   );
