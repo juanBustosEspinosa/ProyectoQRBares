@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { getRestaurantById, getDishes, getCategories } from './FuncionesDatabase';
 import LanguageToggle from './LanguageToggle'
 
-function Menu() {
+function Menu({idRestaurante}) {
 
     const [restaurant, setRestaurant] = useState(null);
     const [dishes, setdishes] = useState([]);
@@ -18,11 +18,11 @@ function Menu() {
     
     useEffect(() => {
         const cargarRestaurante = async () => {
-            const resultado = await getRestaurantById('2dab633a-9bd8-4d2c-b70f-ce4d7246aa77');
+            const resultado = await getRestaurantById(idRestaurante);
             setRestaurant(resultado);
-            const resultadoDishes = await getDishes('2dab633a-9bd8-4d2c-b70f-ce4d7246aa77');
+            const resultadoDishes = await getDishes(idRestaurante);
             setdishes(resultadoDishes);
-            const resultadoCategories = await getCategories('2dab633a-9bd8-4d2c-b70f-ce4d7246aa77');
+            const resultadoCategories = await getCategories(idRestaurante);
             seCategories(resultadoCategories);
         };
 
